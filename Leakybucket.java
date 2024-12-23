@@ -1,11 +1,7 @@
-// Java Implementation of Leaky bucket
-import java.io.*;
-import java.util.*;
 class Leakybucket {
     public static void main(String[] args)
     {
-        int no_of_queries, storage, output_pkt_size;
-        int input_pkt_size, bucket_size, size_left;
+        int no_of_queries, storage, output_pkt_size,input_pkt_size, bucket_size, size_left;
         // initial packets in the bucket
         storage = 0;
         // total no. of times bucket content is checked
@@ -19,7 +15,7 @@ class Leakybucket {
         output_pkt_size = 1;
         for (int i = 0; i < no_of_queries; i++) {
             size_left = bucket_size - storage; // space left
-            if (input_pkt_size <= (size_left)) {
+            if (input_pkt_size <= size_left) {
                 storage += input_pkt_size;
             }
             else {

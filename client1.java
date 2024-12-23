@@ -2,7 +2,8 @@
 import java.net.*;
 import java.io.*;
 public class client1
-{    public static void main(String args[]) throws Exception
+{    @SuppressWarnings("resource")
+public static void main(String args[]) throws Exception
     {
         Socket sock = new Socket("127.0.0.1", 4000);
 
@@ -20,7 +21,6 @@ public class client1
         InputStream istream = sock.getInputStream();
         BufferedReader socketRead = new BufferedReader(new InputStreamReader(istream));
         String str;
-        
         while ((str = socketRead.readLine()) != null) // reading line-by-line
         {
             System.out.println(str);

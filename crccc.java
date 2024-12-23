@@ -37,15 +37,18 @@ public class crccc {
         for(int j=0;j<div.length;j++){
         rem[j]=div[j];}
         rem=divide(div,divisor,rem);
+        
         for(int i=0;i<div.length;i++)
         {
             crc[i]=(div[i]^rem[i]);
         }
         System.out.println();
+
         System.out.println("CRC CODE:");
         for(int i=0;i<crc.length;i++)
         System.out.print(crc[i]);
         System.out.println();
+
         System.out.println("Enter CRC code of "+tot_length+"bits:");
         for(int i=0;i<crc.length;i++)
         crc[i]=Integer.parseInt(br.readLine());
